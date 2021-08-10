@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { 
+    height: 100%;
+    margin: 20px;
+    background-color: silver;
+}
+body { font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.home-button {
+    width: 200px;
+    height: 100px;
+    background-color: steelblue !important;
+}
+
+.header {
+    color: rgb(16, 74, 121);
+}
+
+.submit-button {
+    background-color: steelblue !important;
+}
+
+.cancel-button {
+    background-color: silver;
+}

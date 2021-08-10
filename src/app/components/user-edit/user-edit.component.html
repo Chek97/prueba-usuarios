@@ -1,0 +1,67 @@
+<div>
+    <!-- <form autocomplete="off" [formGroup]="form" (ngSubmit)="edit()">
+        <input type="file" formControlName="avatar" [class.is-invalid]="invalidAvatar">
+        <small *ngIf="invalidAvatar">Debes seleccionar una imagen como avatar</small>
+        <input type="text" placeholder="EJ: Cristano" formControlName="first_name" [class.is-invalid]="invalidName">
+        <small *ngIf="invalidName">El nombre es obligatorio y debe tener como maximo 50 caracteres</small>
+        <input type="text" placeholder="EJ: Cristano" formControlName="last_name" [class.is-invalid]="invalidLastName">
+        <small *ngIf="invalidLastName">El apellido es obligatorio y debe tener como maximo 50 caracteres</small>
+        <input type="text" placeholder="EJ: Cristano" formControlName="age">
+        <input type="text" placeholder="EJ: Cristano" formControlName="identification_number" [class.is-invalid]="invalidIdentification">
+        <small *ngIf="invalidIdentification">El No. identificacion es obligatorio</small>
+        <input type="text" placeholder="EJ: Cristano" formControlName="mail" [class.is-invalid]="invalidMail">
+        <small *ngIf="invalidMail">Debe ser un correo valido</small>
+        
+        <button type="submit">Actualizar</button>
+        <button>Cancelar</button>
+    </form> -->
+    <div class="form-container">
+        <div class="header">
+            <h2>Editar Persona</h2>
+        </div>
+        <form autocomplete="off" [formGroup]="form" (ngSubmit)="edit()">
+            <div class="img-form-container">
+                <img class="img-form" src="assets/user.png" alt="perfil">
+                <input type="file" formControlName="avatar">
+                <mat-error *ngIf="invalidAvatar">El avatar debe ser requerido</mat-error>
+            </div>
+            <div class="input-container">
+                <div>
+                    <mat-form-field class="input-form" appearance="fill">
+                        <mat-label>Nombres</mat-label>
+                        <input matInput formControlName="first_name">
+                        <mat-error *ngIf="invalidName">El nombre es requerido y como maximo 50 caracteres</mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="input-form" appearance="fill">
+                        <mat-label>Apellidos</mat-label>
+                        <input matInput formControlName="last_name">
+                        <mat-error *ngIf="invalidLastName">El apellido es requerido y como maximo 50 caracteres</mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="input-form" appearance="fill">
+                        <mat-label>Edad</mat-label>
+                        <input matInput formControlName="age">
+                    </mat-form-field>
+                    <mat-form-field class="input-form" appearance="fill">
+                        <mat-label>No. Identificacion</mat-label>
+                        <input matInput formControlName="identification_number">
+                        <mat-error *ngIf="invalidIdentification">la identificacion es requerida</mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="input-form" appearance="fill">
+                        <mat-label>Correo</mat-label>
+                        <input matInput formControlName="mail">
+                        <mat-error *ngIf="invalidMail">El correo no es valido</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="button-container">
+                    <button mat-raised-button color="primary" [disabled]="!form.valid" class="submit-button" type="submit">Actualizar</button>
+                    <button 
+                        mat-raised-button 
+                        color="secondary" 
+                        class="cancel-button"
+                        (click)="redirect()"
+                    >Cancelar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,91 @@
+<div class="users-container">
+    <div class="header">
+        <h2>Gestion de Usuarios</h2>
+    </div>
+    <!-- div *ngIf="loading === false">
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Nombres</th>
+                    <th>Apellidos</th>
+                    <th>Edad</th>
+                    <th>No. Identificacion</th>
+                    <th>Correo</th>
+                    <th colspan="2">Opciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of users; let i = index">
+                    <td>{{i}}</td>
+                    <td>{{user.first_name}}</td>
+                    <td>{{user.last_name}}</td>
+                    <td>{{user.age}}</td>
+                    <td>{{user.identification_number}}</td>
+                    <td>{{user.mail}}</td>
+                    <td>
+                        <button (click)="redirect('edit', user.identification_number)">Editar</button>
+                        <button (click)="delete(user.identification_number)">Eliminar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div>
+            <button (click)="redirect('new')">Nuevo</button>
+        </div>
+    </div> -->
+    <table mat-table class="users-table" [dataSource]="dataSource" class="mat-elevation-z8">
+
+        <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+      
+        <!-- Position Column -->
+        <ng-container matColumnDef="#">
+          <th mat-header-cell class="table-header" *matHeaderCellDef> # </th>
+          <td mat-cell class="table-content" *matCellDef="let element; let i = index"> {{i + 1}} </td>
+        </ng-container>
+      
+        <!-- Name Column -->
+        <ng-container matColumnDef="nombres">
+          <th mat-header-cell class="table-header" *matHeaderCellDef> NOMBRES </th>
+          <td mat-cell class="table-content" *matCellDef="let element"> {{element.first_name}} </td>
+        </ng-container>
+      
+        <!-- Weight Column -->
+        <ng-container matColumnDef="apellidos">
+          <th mat-header-cell class="table-header" *matHeaderCellDef> APELLIDOS </th>
+          <td mat-cell class="table-content" *matCellDef="let element"> {{element.last_name}} </td>
+        </ng-container>
+      
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="edad">
+          <th mat-header-cell class="table-header" *matHeaderCellDef> EDAD </th>
+          <td mat-cell class="table-content" *matCellDef="let element"> {{element.age}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="No_identificacion">
+            <th mat-header-cell class="table-header" *matHeaderCellDef> NO. IDENTIFICACION </th>
+            <td mat-cell class="table-content" *matCellDef="let element"> {{element.identification_number}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="correo">
+            <th mat-header-cell class="table-header" *matHeaderCellDef> CORREO </th>
+            <td mat-cell class="table-content" *matCellDef="let element"> {{element.mail}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="opciones">
+            <th mat-header-cell class="table-header" *matHeaderCellDef colspan="2"> OPCIONES </th>
+            <td mat-cell class="table-content" *matCellDef="let element"> 
+                <mat-icon class="icon-button-edit" (click)="redirect('edit', element.identification_number)" aria-hidden="false" aria-label="Example home icon">edit</mat-icon>
+                <mat-icon class="icon-button-trash" (click)="openDialog(element.identification_number)" aria-hidden="false" aria-label="Example home icon">delete</mat-icon>
+            </td>
+          </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+      <div style="margin-top: 10px;">
+        <button mat-raised-button color="primary" class="new-button" (click)="redirect('new')">Nuevo</button>
+      </div>
+</div>
+

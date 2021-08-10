@@ -1,0 +1,42 @@
+.users-container {
+    padding: 50px;
+    background-color: #ffff;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.users-table {
+    width: 100%;
+}
+
+.table-header {
+    background-color: steelblue;
+    padding: 20px;
+    color: #ffff;
+}
+
+.table-content {
+    padding: 20px;
+}
+
+.icon-button-trash {
+    cursor: pointer;
+    color: red;
+    margin: 5px;
+}
+
+.icon-button-edit {
+    cursor: pointer;
+    color: rgb(211, 211, 82);
+    margin: 5px;
+}
+
+.new-button {
+    background-color: steelblue;
+    padding: 10px;
+    width: 150px;
+}

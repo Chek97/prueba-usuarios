@@ -1,0 +1,9 @@
+<h1 mat-dialog-title>{{data.title}}</h1>
+<div mat-dialog-content>
+  <p>{{data.content}}</p>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button color="secondary" class="cancel-button" (click)="onNoClick()">Cancelar</button>
+  <button mat-raised-button color="primary" class="submit-button" (click)="delete(data.id)" cdkFocusInitial>{{data.action}}</button>
+</div>
+
