@@ -13,6 +13,7 @@ import { SuccessDialogComponent } from '../shared/success-dialog/success-dialog.
 export class UserEditComponent implements OnInit {
 
   user: any;
+  url: any = "assets/user.png";
   form: FormGroup;
 
   constructor(private _activeRoute: ActivatedRoute, 
@@ -108,6 +109,19 @@ export class UserEditComponent implements OnInit {
     this.dialog.open(SuccessDialogComponent, {
       data: {title: 'Usuario Actualizado', content: message, action: 'OK' }
     });
+  }
+
+  onFileChange(event: any){
+    if (event.target.files && event.target.files[0]) {
+      var reader = new FileReader();
+  
+      reader.onload = (event: ProgressEvent) => {
+        this.url = (<FileReader>event.target).result;
+        this.user.avatar = (<FileReader>event.target).result;
+      }
+  
+      reader.readAsDataURL(event.target.files[0]);
+    }
   }
 
 }

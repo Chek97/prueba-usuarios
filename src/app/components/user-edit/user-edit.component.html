@@ -1,28 +1,12 @@
 <div>
-    <!-- <form autocomplete="off" [formGroup]="form" (ngSubmit)="edit()">
-        <input type="file" formControlName="avatar" [class.is-invalid]="invalidAvatar">
-        <small *ngIf="invalidAvatar">Debes seleccionar una imagen como avatar</small>
-        <input type="text" placeholder="EJ: Cristano" formControlName="first_name" [class.is-invalid]="invalidName">
-        <small *ngIf="invalidName">El nombre es obligatorio y debe tener como maximo 50 caracteres</small>
-        <input type="text" placeholder="EJ: Cristano" formControlName="last_name" [class.is-invalid]="invalidLastName">
-        <small *ngIf="invalidLastName">El apellido es obligatorio y debe tener como maximo 50 caracteres</small>
-        <input type="text" placeholder="EJ: Cristano" formControlName="age">
-        <input type="text" placeholder="EJ: Cristano" formControlName="identification_number" [class.is-invalid]="invalidIdentification">
-        <small *ngIf="invalidIdentification">El No. identificacion es obligatorio</small>
-        <input type="text" placeholder="EJ: Cristano" formControlName="mail" [class.is-invalid]="invalidMail">
-        <small *ngIf="invalidMail">Debe ser un correo valido</small>
-        
-        <button type="submit">Actualizar</button>
-        <button>Cancelar</button>
-    </form> -->
     <div class="form-container">
         <div class="header">
             <h2>Editar Persona</h2>
         </div>
         <form autocomplete="off" [formGroup]="form" (ngSubmit)="edit()">
             <div class="img-form-container">
-                <img class="img-form" src="assets/user.png" alt="perfil">
-                <input type="file" formControlName="avatar">
+                <img mat-card-image class="img-form" [src]="url" alt="perfil">
+                <input type="file" formControlName="avatar" (change)="onFileChange($event)">
                 <mat-error *ngIf="invalidAvatar">El avatar debe ser requerido</mat-error>
             </div>
             <div class="input-container">
@@ -53,7 +37,7 @@
                     </mat-form-field>
                 </div>
                 <div class="button-container">
-                    <button mat-raised-button color="primary" [disabled]="!form.valid" class="submit-button" type="submit">Actualizar</button>
+                    <button mat-raised-button color="primary" [disabled]="!form.valid" class="new-button" type="submit">Actualizar</button>
                     <button 
                         mat-raised-button 
                         color="secondary" 

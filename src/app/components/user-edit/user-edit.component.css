@@ -1,7 +1,8 @@
 .form-container {
     background-color: #ffff;
-    padding: 50px;
+    padding: 2em;
     border-radius: 25px;
+    box-shadow: 10px 15px 15px 15px rgb(65, 64, 64);
 }
 
 .header > h2 {
@@ -35,13 +36,15 @@ form {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    justify-content: space-around;
     width: 100%;
 }
 
 .img-form {
     width: 100%;
     height: 100%;
-    color: steelblue !important;
+    border-radius: 50%;
+    padding-bottom: 10px;
 }
 
 .input-form {
@@ -51,4 +54,21 @@ form {
 
 .is-invalid {
     border: 1px solid red;
+}
+
+.new-button {
+    background-color: steelblue !important;
+    padding: 10px 20px 10px 20px;
+    color: #ffff;
+}
+
+@media screen and (max-width: 745px) {
+    form {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+    }
 }

@@ -1,16 +1,17 @@
 .users-container {
-    padding: 50px;
     background-color: #ffff;
+    padding: 2em;
     border-radius: 25px;
+    box-shadow: 10px 15px 15px 15px rgb(65, 64, 64);
+}
+
+.table-container {
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: center;
     justify-content: center;
 }
 
 .users-table {
-    width: 100%;
+    padding: 0;
 }
 
 .table-header {
@@ -39,4 +40,24 @@
     background-color: steelblue;
     padding: 10px;
     width: 150px;
+}
+
+.button-container {
+    text-align: center;
+    margin: 20px 0 10px 0;
+}
+
+@media screen and (max-width: 745px) {
+    .table-container {
+        display: flex;
+        border-top: none;
+        padding: 0;
+        border: 2px solid steelblue;
+        justify-content: center;
+        overflow-x: scroll;
+    }
+    
+    .users-table {
+        width: 200px;
+    }
 }

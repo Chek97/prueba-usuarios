@@ -4,6 +4,7 @@ html, body {
     height: 100%;
     margin: 20px;
     background-color: silver;
+    line-height: 1.25;
 }
 body { font-family: Roboto, "Helvetica Neue", sans-serif; }
 

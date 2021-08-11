@@ -13,6 +13,7 @@ import { SuccessDialogComponent } from '../shared/success-dialog/success-dialog.
 export class UserNewComponent implements OnInit {
 
   form: FormGroup;
+  url: any = "assets/user.png";
 
   constructor(private fb: FormBuilder, private _userService: UserService, private router: Router, public dialog: MatDialog){
     //Create form controls
@@ -75,6 +76,18 @@ export class UserNewComponent implements OnInit {
     this.dialog.open(SuccessDialogComponent, {
       data: {title: 'Usuario Creado', content: message, action: 'OK' }
     });
+  }
+
+  onFileChange(event: any){
+    if (event.target.files && event.target.files[0]) {
+      var reader = new FileReader();
+  
+      reader.onload = (event: ProgressEvent) => {
+        this.url = (<FileReader>event.target).result;
+      }
+  
+      reader.readAsDataURL(event.target.files[0]);
+    }
   }
 
 }

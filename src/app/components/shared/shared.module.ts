@@ -9,7 +9,10 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
+import {MatCardModule} from '@angular/material/card';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {FlexLayoutModule} from '@angular/flex-layout'
 import { DialogComponent } from './dialog/dialog.component';
 import { SuccessDialogComponent } from './success-dialog/success-dialog.component';
 
@@ -28,7 +31,10 @@ import { SuccessDialogComponent } from './success-dialog/success-dialog.componen
     MatPaginatorModule,
     MatIconModule,
     MatInputModule,
-    MatDialogModule
+    MatDialogModule,
+    MatCardModule,
+    FlexLayoutModule,
+    MatProgressSpinnerModule
   ],
   exports: [
     MatSliderModule,
@@ -39,7 +45,10 @@ import { SuccessDialogComponent } from './success-dialog/success-dialog.componen
     MatPaginatorModule,
     MatIconModule,
     MatInputModule,
-    MatDialogModule
+    MatDialogModule,
+    MatCardModule,
+    FlexLayoutModule,
+    MatProgressSpinnerModule
   ]
 })
 export class SharedModule { }
